@@ -1328,6 +1328,138 @@ body {
   .contact .container { grid-template-columns: 1fr; }
 }
 
+/* ═══════════════════════════════════════
+   DIGITAL ENGINEERING & AUTOMATION
+   ═══════════════════════════════════════ */
+.digital-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.digital-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.digital-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-primary), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.digital-card:hover::before {
+  opacity: 1;
+}
+
+.digital-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.digital-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.digital-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 12px var(--accent-glow-strong));
+}
+
+.digital-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-secondary);
+  background: var(--accent-glow);
+  border: 1px solid var(--border-accent);
+  border-radius: 100px;
+  padding: 4px 14px;
+  letter-spacing: 0.5px;
+}
+
+.digital-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.digital-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+
+.digital-desc strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.digital-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.digital-tag {
+  padding: 5px 14px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid var(--border-accent);
+  border-radius: 100px;
+  font-size: 0.78rem;
+  color: var(--accent-secondary);
+  font-weight: 500;
+  font-family: var(--font-mono);
+  letter-spacing: 0.3px;
+  transition: var(--transition-fast);
+}
+
+.digital-card:hover .digital-tag {
+  background: rgba(6, 182, 212, 0.14);
+}
+
+.digital-impact {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(6, 182, 212, 0.06);
+  border: 1px solid var(--border-accent);
+  border-radius: 12px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.impact-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+
 @media (max-width: 768px) {
   :root { --section-padding: 64px 0; }
 
@@ -1356,6 +1488,7 @@ body {
   .skills-container { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .education-grid { grid-template-columns: 1fr; }
+  .digital-grid { grid-template-columns: 1fr; }
   .about-highlights { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
